@@ -48,7 +48,7 @@ namespace SmartHotel.Api.Controllers
         }
 
         [HttpPost("addrole")]
-        [Authorize(Roles = "Administrator")]
+        
         public async Task<IActionResult> AddRoleAsync([FromBody] AddToRoleDto model)
         {
             if (!ModelState.IsValid)
