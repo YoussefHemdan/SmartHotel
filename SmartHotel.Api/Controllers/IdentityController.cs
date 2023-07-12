@@ -33,7 +33,7 @@ namespace SmartHotel.Api.Controllers
         }
 
         [HttpPost]
-        [Route("refreshtoken")]
+        [Route("login")]
         public async Task<ActionResult> RefreshToken([FromBody] LoginUserDto request)
         {
             if (!ModelState.IsValid)
@@ -48,7 +48,7 @@ namespace SmartHotel.Api.Controllers
         }
 
         [HttpPost("addrole")]
-        
+        [Authorize(Roles ="Administrator")]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddToRoleDto model)
         {
             if (!ModelState.IsValid)
