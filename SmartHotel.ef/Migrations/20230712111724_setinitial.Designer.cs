@@ -12,8 +12,8 @@ using SmartHotel.ef.Data;
 namespace SmartHotel.ef.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230711072552_SetupRoles")]
-    partial class SetupRoles
+    [Migration("20230712111724_setinitial")]
+    partial class setinitial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,13 +54,13 @@ namespace SmartHotel.ef.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f1a5454a-4670-4fff-9b89-1ff64f94939a",
+                            Id = "fb0e222f-8ee7-46c4-96c4-dd54da29b609",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "6dc4f183-9e3c-4d1f-a7c0-edec4555e1db",
+                            Id = "5e75bfd0-6d28-4017-840a-da14259ceb20",
                             Name = "User",
                             NormalizedName = "USER"
                         });
