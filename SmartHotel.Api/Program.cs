@@ -7,6 +7,7 @@ using SmartHotel.core.Contracts;
 using SmartHotel.core.Models;
 using SmartHotel.ef.Configuration;
 using SmartHotel.ef.Data;
+using SmartHotel.ef.DataConfigurations;
 using SmartHotel.ef.Repositories;
 using System.Text;
 
@@ -81,8 +82,27 @@ namespace SmartHotel.Api
 
 
             app.MapControllers();
+            
+            
 
-            app.Run();
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<ApplicationDbContext>();
+                var userser = services.GetRequiredService<UserManager<ApiUser>>();
+
+                try
+                {
+                    var ds = new DataSeeding(context);
+                    ds.initialize(userser).Wait();
+                }
+                catch (Exception ex) { }
+            }
+
+                //UserManager<ApiUser>
+
+
+                app.Run();
         }
     }
 }
