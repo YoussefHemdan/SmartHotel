@@ -13,6 +13,6 @@ namespace SmartHotel.core.Dtos.User
         public string UserId { get; set; }
 
         [Required]
-        public string Role { get; set; }
+        public string Role { get; set; } //role you want to change user to
     }
 }

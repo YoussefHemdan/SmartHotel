@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartHotel.core.Dtos.User
 {
-    public class RegisterUserDto
+    public class RegisterUserDto : LoginUserDto
     {
         [Required]
         public string FirstName { get; set; }

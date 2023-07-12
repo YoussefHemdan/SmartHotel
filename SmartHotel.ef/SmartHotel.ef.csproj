@@ -25,8 +25,4 @@
     <ProjectReference Include="..\SmartHotel.core\SmartHotel.core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
