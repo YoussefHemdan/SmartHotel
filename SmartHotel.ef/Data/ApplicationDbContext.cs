@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SmartHotel.core.Models;
 using SmartHotel.ef.Configurations;
@@ -26,6 +27,8 @@ namespace SmartHotel.ef.Data
             base.OnModelCreating(builder);
 
             builder.ApplyConfiguration(new RoleConfiguration());
+
+            
         }
     }
 }
